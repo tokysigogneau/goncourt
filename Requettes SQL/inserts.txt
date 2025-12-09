@@ -39,3 +39,94 @@ VALUES
     ('Perpétuité', 2025-08-21,331),
     ('Le crépuscule des hommes', 2025-08-28, 382)
 ;
+
+
+INSERT INTO `editeur`(`e_nom`)
+VALUES 
+('Gallimard'),
+('POL'),
+('Minuit'),
+('Stock'),
+('Ed. de l Olivier'),
+('Seuil'),
+('Julliard'),
+('Editions Marchialy'),
+('Sabine Wespieser éditeur'),
+('Albin Michel]'),
+('Verdier'),
+('Verticales'),
+('R. Laffont')
+INSERT INTO `personnages_principaux`(`pp_nom`, `fk_id_livre`) 
+VALUES 
+('Ces femmes',31),
+('Tous les trois',32),
+('Notre mère',32),
+('Mon père',33),
+('Sa mère',33),
+('Marguerite',33),
+('Marie-Ernestines',33),
+('Une femme',34),
+('Son frère',35),
+('Une femme',36),
+('Jeune garçon',36),
+('Son fils',36),
+('Les deux familles',36),
+('Une femme',37),
+('Son mari',37),
+('Sa famille',37),
+('Bilal Seck ',38),
+('Un médecin',38),
+('un psychiatre',39),
+('son équipe mobile',39),
+('Élizabeth Dubreuil',40),
+('Sa grand-mère',40),
+('Un ami de son père.',40),
+('Réginas',40),
+('Je',41),
+('Elle',42),
+('Une mère',43),
+('les deux enfants',43),
+('Pierre',44),
+('Houda',44),
+('Laurent',44),
+('Maêva',44),
+('D autres surveillants',44),
+('Göring',45),
+('d autres nazis',45)
+
+INSERT SELECTION 
+
+INSERT INTO resultat(r_numero_selection, r_total_votes, fk_id_livre) 
+VALUES 
+(1,0,31),
+(1,0,32),
+(1,0,33),
+(1,0,34),
+(1,0,35),
+(1,0,36),
+(1,0,37),
+(1,0,38),
+(1,0,39),
+(1,0,40),
+(1,0,41),
+(1,0,42),
+(1,0,43),
+(1,0,44),
+(1,0,45),
+(2,0,31),
+(2,0,32),
+(2,0,36),
+(2,0,40),
+(2,0,37),
+(2,0,41),
+(2,0,33),
+(2,0,45),
+(3,0,31),
+(3,0,32),
+(3,0,37),
+(3,0,33)
+
+
+
+
+
