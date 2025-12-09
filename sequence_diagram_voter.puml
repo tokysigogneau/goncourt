@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'[Affichage teoz activé]
+!pragma teoz true
+'[Titre du graphique]
+title Diagramme de séquence pour le cas d'utilisation "Voter pour un livre"
+
+'[Titre du cas d'utilisation]
+== Voter pour un livre ==
+
+'****** Initialisation acteur ******
+'[Cache titre de pied 'Admin' 'Système']
+hide footbox
+
+
+'[Active 'barre de vie']
+Activate Système
+
+'[Active la numérotation]
+autonumber
+
+'Début de la séquence
+alt#Gold #LightBlue
+    Jury -> Système: Demande la liste de la sélection
+
+    Système -> Jury: Renvoie la liste de la sélection demandée
+
+    Jury -> Système: Vote pour le livre de son choix
+'Fin de la numérotation '
+autonumber stop
+end
+'[Désactive 'barre de vie']
+Deactivate Système
+
+@enduml

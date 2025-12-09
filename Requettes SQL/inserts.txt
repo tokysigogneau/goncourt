@@ -1,0 +1,41 @@
+INSERTS 
+
+INSERT INTO `auteur`(a_nom) 
+VALUES (
+    'Natacha Appanah'),
+    ('Emmanuel Carrière'),
+    ('Laurent Mauvignier'),
+    ('Maria Pourchet'),
+    ('David Thomas'),
+    ('Paul Gasnier'),
+    ('Caroline Lamarche'),
+    ('David Diop'),
+    ('David Deneufgermain'),
+    ('Yanick Lahens'),
+    ('Charif Majdalani'),
+    ('Ghislaine Dunant'),
+    ('Hélène Laurain'),
+    ('Guillaume Poix'),
+    ('Alfred de Montesquiou')
+;
+
+
+
+INSERT INTO livre(l_titre,l_date_de_parution, l_nb_page) 
+VALUES 
+	('La nuit au coeur', 2025-08-21, 282),
+    ('KolKhoze', 2025-08-28,558),
+    ('La Maison vide',2025-08-28, 743 ),
+    ('Tressaillir',2025-08-20, 324),
+    ('Un Frère', 2025-08-22,139),
+    ('La collisson', 2025-08-21, 160),
+    ('Le bel obscur', 2025-08-22, 229),
+    ('Où s adosse le ciel',2025-08-14, 363 ),
+    ('L Adieu au visage', 2025-08-20, 261),
+    ('Passagère de nuit', 2025-08-28, 223),
+    ('Le nom des rois', 2025-08-20, 214),
+    ('Un amour infini', 2025-08-20, 170),
+    ('Tambora', 2025-08-28, 192),
+    ('Perpétuité', 2025-08-21,331),
+    ('Le crépuscule des hommes', 2025-08-28, 382)
+;

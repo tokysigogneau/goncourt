@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'[Affichage teoz activé]
+!pragma teoz true
+'[Titre du graphique]
+title Diagramme de séquence pour le cas d'utilisation "Afficher les résultats d'une sélction"
+
+'[Titre du cas d'utilisation]
+== Afficher les résultats ==
+
+'****** Initialisation acteur ******
+'[Cache titre de pied 'Admin' 'Système']
+hide footbox
+
+
+'[Active 'barre de vie']
+Activate Système
+
+'[Active la numérotation]
+autonumber
+
+'Début de la séquence
+alt#Gold #LightBlue
+    User -> Système: Demande les résultat d'une sélection
+
+    Système -> User: Renvoie les résultat d'une sélection demandée
+
+autonumber stop
+end
+
+'[Désactive 'barre de vie']
+Deactivate Système
+
+@enduml

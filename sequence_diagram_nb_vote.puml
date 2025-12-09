@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'[Affichage teoz activé]
+!pragma teoz true
+'[Titre du graphique]
+title Diagramme de séquence pour le cas d'utilisation "Indiquer le nombre de vote obtenu de chaque livre"
+
+'[Titre du cas d'utilisation]
+== Indiquer le nombre de votes obtenu de chaque livre ==
+
+'****** Initialisation acteur ******
+'[Cache titre de pied 'Admin' 'Système']
+hide footbox
+
+
+'[Active 'barre de vie']
+Activate Système
+
+'[Active la numérotation]
+autonumber
+
+'Début de la séquence
+alt#Gold #LightBlue
+    President -> Système: Demande un livre dans la liste de la sélection
+
+    Système -> President: Renvoie un livre choisi
+
+    President -> Système: Indique le nombre de votes obtenus du livre
+
+    Système -> President: Confirme la modification du vote
+
+'Fin de la numérotation '
+autonumber stop
+end
+'[Désactive 'barre de vie']
+Deactivate Système
+
+@enduml
