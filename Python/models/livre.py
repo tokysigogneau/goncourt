@@ -18,8 +18,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from models.editeur import  Editeur
-from  models.auteur import  Auteur
-
+from models.auteur import Auteur
 
 
 @dataclass

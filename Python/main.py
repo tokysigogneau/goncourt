@@ -1,7 +1,5 @@
 from business.goncourt import Goncourt
 
-
-
 def main() -> None:
     """Programme principal."""
     print("""\
@@ -34,9 +32,21 @@ Bienvenue au Goncourt 2025 !
 
 
 
-    # ############ PRINT LIVRE BY ID
-    print (goncourt.get_livre_by_id(31))
-    print(goncourt.get_livre_by_id(32))
+    # # ############ PRINT LIVRE BY ID
+    # print (goncourt.get_livre_by_id(31))
+    # print(goncourt.get_livre_by_id(32))
+
+
+    # # # ############ PRINT RESULTAT BY ID
+    # print (goncourt.get_resultat_by_id(1))
+
+
+    # # ############ PRINT RESULTAT BY SELECTION
+
+    resultats = goncourt.get_resultats_by_selection(3)
+    for resultat in resultats:
+        print(resultat)
+
 
 
 
