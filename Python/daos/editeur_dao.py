@@ -1,5 +1,5 @@
-from ..models.editeur import Editeur
-from dao import Dao
+from models.editeur import Editeur
+from daos.dao import Dao
 from dataclasses import dataclass
 from typing import Optional
 

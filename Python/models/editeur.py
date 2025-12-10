@@ -4,7 +4,7 @@ from models.livre import  Livre
 
 
 @dataclass
-class Editeur(Livre):
+class Editeur:
     """Editeur qui publie le livre, il contient le nom de l'éditeur."""
     id_editeur: Optional[int] = field(default=None, init=False)
     e_nom : str

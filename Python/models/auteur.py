@@ -15,5 +15,6 @@ class Auteur():
     a_nom : str
     a_biographie : str | None
     def __str__(self) -> str:
-        return f"Auteur :  {self.a_nom}" +\
-            (f", {self.a_biographie}" if self.a_biographie is not None else '')
+        #les \n servent à passer à la ligne
+        return f"Auteur :  {self.a_nom}" + \
+            (f"\nBiographie : {self.a_biographie} \n" if self.a_biographie is not None else '\n')

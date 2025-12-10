@@ -5,17 +5,13 @@ from dataclasses import dataclass, field
 from datetime import date
 
 from daos.auteur_dao import AuteurDao
+from daos.editeur_dao import EditeurDao
 
-# from Python.daos.editeur_dao import EditeurDao
-# from Python.daos.auteur_dao import AuteurDao
-# from Python.daos.auteur_dao import AuteurDao
-# from Python.daos.auteur_dao import AuteurDao
 
 
 from models.auteur import Auteur
-# from models.course import Course
-# from models.teacher import Teacher
-# from models.student import Student
+from models.editeur import Editeur
+
 
 
 @dataclass
@@ -27,20 +23,19 @@ class Goncourt:
     - students : liste des élèves"""
 
     auteur: list[Auteur] = field(default_factory=list, init=False)
+    editeur: list[Editeur] = field(default_factory=list, init=False)
     # teachers: list[Teacher] = field(default_factory=list, init=False)
     # students: list[Student] = field(default_factory=list, init=False)
 
-    def add_course(self, auteur: Auteur) -> None:
+    def add_auteur(self, auteur: Auteur) -> None:
         """Ajout du cours course à la liste des cours."""
         self.auteur.append(auteur)
 
-    # def add_teacher(self, teacher: Teacher) -> None:
-    #     """Ajout de l'enseignant teacher à la liste des enseignants."""
-    #     self.teachers.append(teacher)
-    #
-    # def add_student(self, student: Student) -> None:
-    #     """Ajout de l'élève spécifié à la liste des élèves."""
-    #     self.students.append(student)
+    def add_editeur(self, editeur: Editeur) -> None:
+        """Ajout du cours course à la liste éditeurs."""
+        self.editeur.append(editeur)
+
+
     #
     # def display_courses_list(self) -> None:
     #     """Affichage de la liste des cours avec pour chacun d'eux :
@@ -56,6 +51,11 @@ class Goncourt:
     def get_auteur_by_id(id_auteur: int):
         auteur_dao: AuteurDao = AuteurDao()
         return auteur_dao.read(id_auteur)
+
+    @staticmethod
+    def get_editeur_by_id(id_editeur: int):
+        editeur_dao: EditeurDao = EditeurDao()
+        return editeur_dao.read(id_editeur)
 
     # @staticmethod
     # def get_student_by_id(id_student: int):

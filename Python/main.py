@@ -22,10 +22,16 @@ Bienvenue au Goncourt 2025 !
     # print(school.get_course_by_id(9))
     # print()
 
-    ############ PRINT
+    ############ PRINT AUTEUR BY ID
     print(goncourt.get_auteur_by_id(1))
     print(goncourt.get_auteur_by_id(2))
     print(goncourt.get_auteur_by_id(3))
+
+
+    ############ PRINT EDITEUR BY ID
+    print(goncourt.get_editeur_by_id(1))
+    print(goncourt.get_editeur_by_id(2))
+    print(goncourt.get_editeur_by_id(3))
 
 
 
