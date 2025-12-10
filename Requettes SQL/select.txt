@@ -1,0 +1,7 @@
+SELECT LIVRES
+
+SELECT l_titre, l_date_de_parution, l_nb_page, l_prix, l_isbn, e_nom, a_nom, a_biographie 
+FROM livre
+INNER JOIN editeur ON editeur.id_editeur = livre.fk_id_editeur
+INNER JOIN auteur ON auteur.id_auteur = livre.fk_id_auteur
+WHERE id_livre= 31;

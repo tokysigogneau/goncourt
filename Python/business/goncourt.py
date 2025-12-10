@@ -6,12 +6,13 @@ from datetime import date
 
 from daos.auteur_dao import AuteurDao
 from daos.editeur_dao import EditeurDao
+from daos.livre_dao import LivreDao
 
 
 
 from models.auteur import Auteur
 from models.editeur import Editeur
-
+from models.livre import Livre
 
 
 @dataclass
@@ -24,6 +25,7 @@ class Goncourt:
 
     auteur: list[Auteur] = field(default_factory=list, init=False)
     editeur: list[Editeur] = field(default_factory=list, init=False)
+    livre: list[Livre] = field(default_factory=list, init=False)
     # teachers: list[Teacher] = field(default_factory=list, init=False)
     # students: list[Student] = field(default_factory=list, init=False)
 
@@ -34,6 +36,10 @@ class Goncourt:
     def add_editeur(self, editeur: Editeur) -> None:
         """Ajout du cours course à la liste éditeurs."""
         self.editeur.append(editeur)
+
+    def add_livre(self, livre: Livre) -> None:
+        """Ajout du cours course à la liste éditeurs."""
+        self.livre.append(livre)
 
 
     #
@@ -57,25 +63,12 @@ class Goncourt:
         editeur_dao: EditeurDao = EditeurDao()
         return editeur_dao.read(id_editeur)
 
-    # @staticmethod
-    # def get_student_by_id(id_student: int):
-    #     student_dao: StudentDao = StudentDao()
-    #     return student_dao.read(id_student)
-    #
-    # @staticmethod
-    # def get_student_all():
-    #     student_list = StudentDao()
-    #     return student_list.read_all()
-    #
-    # @staticmethod
-    # def get_address_by_id(id_address: int):
-    #     address_dao: AddressDao = AddressDao()
-    #     return address_dao.read(id_address)
-    #
-    # @staticmethod
-    # def get_teacher_by_id(id_teacher: int):
-    #     teacher_dao: TeacherDao = TeacherDao()
-    #     return teacher_dao.read(id_teacher)
+    @staticmethod
+    def get_livre_by_id(id_livre: int):
+        livre_dao: LivreDao = LivreDao()
+        return livre_dao.read(id_livre)
+
+
 
 
 

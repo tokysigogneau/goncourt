@@ -44,7 +44,18 @@ class Livre:
     l_auteur : Auteur | None = field(default=None, init=False)
     l_editeur : Editeur | None = field(default=None, init=False)
 
+    def set_auteur(self, auteur: Auteur):
+        self.l_auteur = auteur
+
+    def set_editeur(self, editeur: Editeur):
+        self.l_editeur = editeur
+
+
+
     def __str__(self) -> str:
-        return f"Titre : {self.l_titre} écrit par {Auteur} en {self.l_date_de_parution} " +\
-            f"Contient {self.l_nb_page} pages, prix : {self.l_prix} Code ISBN : {self.l_isbn} "
+        return f"Titre : << {self.l_titre} >> écrit par {self.l_auteur.a_nom} en {self.l_date_de_parution} \n" +\
+            f"Contient {self.l_nb_page} pages, prix : {self.l_prix} Code ISBN : {self.l_isbn} \n" +\
+            f"Biographie : {self.l_auteur.a_biographie} \n" +\
+            f"{self.l_editeur}" +\
+            f" \n ---------------------------------------------"
 
