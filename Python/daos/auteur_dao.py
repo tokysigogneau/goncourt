@@ -17,7 +17,11 @@ class AuteurDao(Dao[Auteur]):
         auteur: Optional[Auteur]
 
         with Dao.connection.cursor() as cursor:
-            sql = "SELECT a_nom, a_biographie FROM auteur WHERE id_auteur=%s"
+            sql = """
+            SELECT a_nom, a_biographie 
+            FROM auteur 
+            WHERE id_auteur=%s
+            """
             cursor.execute(sql, (id_auteur,))
             record = cursor.fetchone()
         if record is not None:

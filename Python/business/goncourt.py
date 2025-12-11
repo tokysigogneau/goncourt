@@ -50,17 +50,6 @@ class Goncourt:
         self.livre.append(livre)
 
 
-    #
-    # def display_courses_list(self) -> None:
-    #     """Affichage de la liste des cours avec pour chacun d'eux :
-    #     - leur enseignant
-    #     - la liste des élèves le suivant"""
-    #     for course in self.courses:
-    #         print(f"cours de {course}")
-    #         for student in course.students_taking_it:
-    #             print(f"- {student}")
-    #         print()
-
     @staticmethod
     def get_auteur_by_id(id_auteur: int):
         auteur_dao: AuteurDao = AuteurDao()
@@ -85,6 +74,25 @@ class Goncourt:
     def get_resultats_by_selection(r_numero_selection: int) -> list[Resultat]:
         resultat_dao = ResultatDao()
         return resultat_dao.read_selection(r_numero_selection)
+
+    #Add a book to a selection with the selection number + the total of vote
+    @staticmethod
+    def insert_resultats_by_selection(r_numero_selection: int, r_total_votes: int, fk_id_livre: int) -> list[Resultat]:
+        resultat_dao = ResultatDao()
+        return resultat_dao.create(r_numero_selection,r_total_votes,fk_id_livre)
+
+    #update the vote count of a book in a given selection
+    @staticmethod
+    def update_vote(r_numero_selection: int, r_total_votes: int, fk_id_livre: int) -> list[Resultat]:
+        resultat_dao = ResultatDao()
+        return resultat_dao.update(r_numero_selection,r_total_votes,fk_id_livre)
+
+    #Remove the books from the selected "Selection"
+    @staticmethod
+    def delete_select(r_numero_selection: int) -> list[Resultat]:
+        resultat_dao = ResultatDao()
+        return resultat_dao.delete(r_numero_selection)
+
 
 
 

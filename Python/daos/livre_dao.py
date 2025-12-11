@@ -38,7 +38,7 @@ class LivreDao(Dao[Livre]):
         if record is None:
             return None
 
-        # Création du livre
+        # We create each object that will contain the Livre in the list
         livre = Livre(
             record['l_titre'],
             record['l_date_de_parution'],
@@ -47,18 +47,18 @@ class LivreDao(Dao[Livre]):
             record['l_isbn']
         )
 
-        # Hydratation de l'auteur
+        # Object Auteur
         auteur = Auteur(
             a_nom=record['a_nom'],
             a_biographie=record['a_biographie']
         )
 
-        livre.set_auteur(auteur)
-
-        # Hydratation de l'éditeur
+        # Object Editeur
         editeur = Editeur(
             e_nom=record['e_nom']
         )
+        # this link the objects to the big object Livre
+        livre.set_auteur(auteur)
         livre.set_editeur(editeur)
 
         return livre

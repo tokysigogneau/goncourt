@@ -17,7 +17,11 @@ class EditeurDao(Dao[Editeur]):
         editeur: Optional[Editeur]
 
         with Dao.connection.cursor() as cursor:
-            sql = "SELECT e_nom FROM editeur WHERE id_editeur=%s"
+            sql = """
+            SELECT e_nom 
+            FROM editeur 
+            WHERE id_editeur=%s
+            """
             cursor.execute(sql, (id_editeur,))
             record = cursor.fetchone()
         if record is not None:

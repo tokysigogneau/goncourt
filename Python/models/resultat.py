@@ -13,9 +13,12 @@ class Resultat:
     """Résultats des votes et chaque tour"""
 
     r_numero_selection: int
-    r_total_votes: int
+    r_total_votes: Optional[int] = field(default=0)
+    fk_id_livre: Optional[int] = field(default=None, init=False)
     id_resultat: Optional[int] = field(default=None, init=False)
+
     r_livre: Livre | None = field(default=None, init=False)
+
 
     def set_livre(self, livre: "Livre"):
         self.r_livre = livre

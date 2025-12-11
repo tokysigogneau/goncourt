@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'[Affichage teoz activé]
+!pragma teoz true
+'[Titre du graphique]
+title Diagramme de séquence pour le cas d'utilisation "Ajouter un livre à une selection"
+
+'[Titre du cas d'utilisation]
+== Ajouter un livre à une selection ==
+
+'****** Initialisation acteur ******
+'[Cache titre de pied 'Admin' 'Système']
+hide footbox
+
+
+'[Active 'barre de vie']
+Activate Système
+
+'[Active la numérotation]
+autonumber
+
+'Début de la séquence
+alt#Gold #LightBlue
+    President -> Système: Demande la liste de la sélection
+
+    Système -> President: Renvoie la liste de la sélection demandée
+
+    President -> Système: Entre le livre de son choix et indique combien de vote qu'il a reçu
+
+    alt#Gold #pink
+        Système -> President: Ce livre n'existe pas dans la selection demandée
+        end
+    alt#Gold #LightBlue
+        Système -> President: Ce livre existe et les données sont mises à jour
+
+'Fin de la numérotation '
+autonumber stop
+end
+'[Désactive 'barre de vie']
+Deactivate Système
+
+@enduml
